@@ -17,7 +17,7 @@ int main(void)
   /* get customers name */
   printf("welcome to NANDOM'S resturant\n");
   printf("what is your name : ");
-  scanf("%s",&name);
+  fgets(name, 20, stdin);
   
   /* transform name to uppercase */
   for ( i = 0; name[i]; i++)
@@ -27,8 +27,8 @@ int main(void)
   
     
   /* get customers order */
-  printf("welcome %s\n\nThank you for visiting us today\n\n", name);
-  printf("what can we offer you ?\n\n"); 
+  printf("welcome %s\nThank you for visiting us today\n", name);
+  printf("what can we offer you ?\n"); 
   printf("we have:\n");
 
   /*do..while loop*/
@@ -46,7 +46,7 @@ int main(void)
     printf("%s very nice choice\n", menu[optionSelect]);
 
     /* show order price */
-    printf("that would be $%.2lf\n\n", prices[optionSelect]);
+    printf("that would be $%.2lf\n", prices[optionSelect]);
 
     /* get payment */
     printf("oya give me my money: ");
@@ -57,14 +57,14 @@ int main(void)
     {
       /*if the payment is greater or equal to price of meal*/
       printf("your change is $%.2lf\n", payment - prices[optionSelect]);
-      printf("thank you once again %s for coming to our establishment\nhave a wonderful day\n\n\n", name);
+      printf("thank you once again %s0for coming to our establishment\nhave a wonderful day\n\n\n", name);
 
       /* ask if customer wants to eat again and save answer in variable*/
       printf("would you like to eat again ?\n (0) no\n (1) yes\n\n");
       scanf("%d",&buyAgain);
     } else if (payment < prices[optionSelect]) {
       /*if the payment is less than price of meal*/
-      printf("you are owing $%.2lf\n\n\nABEG GIVE ME MY MONEY IF YOU NO WAN DIE\n",prices[optionSelect] - payment);
+      printf("you are owing $%.2lf\n\nABEG GIVE ME MY MONEY IF YOU NO WAN DIE\n",prices[optionSelect] - payment);
       printf("THANK GOD I REMEMBER YOUR NAME SEF : %s\nOYA GETOUT\n",name);
       buyAgain = 0;
     } 
