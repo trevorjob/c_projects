@@ -61,7 +61,7 @@ int main(void)
         /* transform name to uppercase */
         for ( i = 0; name[i]; i++)
         {
-        name[i] = toupper(name[i]);
+                name[i] = toupper(name[i]);
         }
 
         // quiz information and guidlines
