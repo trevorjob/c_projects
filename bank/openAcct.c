@@ -31,7 +31,7 @@ account_t *openAcct(account_t *newacct)
         strcpy(newacct->initials,a);
         // GENERATE NUMBER FOR ACCOUNT NUMBER
         srand(time(0));
-        accountNumber = (rand() % 1000) + 1000;
+        accountNumber = (rand() % 100) + 100;
         newacct->accountNumber = accountNumber;
 
         printf("your account number is %d\n", newacct->accountNumber);
@@ -46,7 +46,7 @@ account_t *openAcct(account_t *newacct)
                 if (count > 0)
                         printf("pin must be 3 digits: ");
                 else
-                        printf("create pin\npin must be 3 digits: ");
+                        printf("create pin\npin must be 2 digits: ");
                 scanf("%d", &pin);
                 count++;
                 // if(!isdigit(pin))
