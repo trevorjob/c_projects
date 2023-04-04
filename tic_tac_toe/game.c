@@ -39,7 +39,7 @@ int main(void)
                                         printGameBoard(gameBoard, pl1,pl2);
                                         gamePlay = 1;
                                 }
-                                ////////////// X or O ////////
+                                ////////////// X or O //////////
                                 playerSign = switchPlayers(i);
                                 scanf("%d", &playerSelect);
 
@@ -53,7 +53,7 @@ int main(void)
                                                         gameBoard[playerSelect] = playerSign;
                                                         i++;
                                                 }
-                                                else
+                                                
                                                 {
                                                         while (playerSelect > 8 || playerSelect < 0)
                                                         {
@@ -68,7 +68,7 @@ int main(void)
                                                 }
                                                 count = 1;
                                         }
-                                        else
+                                        
                                         {
                                                 printGameBoard(gameBoard, pl1,pl2);
                                                 printf("select another box: ");
@@ -80,7 +80,7 @@ int main(void)
 
                                 printGameBoard(gameBoard, pl1,pl2);
                         }
-                        else
+                        
                         {
                                 break;
                         }
@@ -93,12 +93,12 @@ int main(void)
                 {
                         if (playerSign == 'X')
                                 pl1++;
-                        else
+                        
                                 pl2++;
                         
                         printf("%c wins\n", playerSign);
                 }
-                else 
+                 
                         printf("nobody wins\n");
 
                 printf("continue game...?\n(0)yes (1)no\n");
@@ -150,7 +150,7 @@ char switchPlayers(int i)
                 printf("player 1: ");
                 return ('X');
         }
-        else
+        
         {       
                 printf("player 2: ");
                 return ('O');  
@@ -165,43 +165,41 @@ int declareWinner(char *gameBoard)
                 printf("%c wins\n", gameBoard[0]);
                 return 1;
         }
-        else if (gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5] && gameBoard[4] == gameBoard[5])
+         if (gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5] && gameBoard[4] == gameBoard[5])
         {
                 printf("%c wins\n", gameBoard[3]);
                 return 1;
         }
-        else if (gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8] && gameBoard[7] == gameBoard[8])
+         if (gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8] && gameBoard[7] == gameBoard[8])
         {
                 printf("%c wins\n", gameBoard[6]);
                 return 1;
         }
-        else if (gameBoard[0] == gameBoard[3] && gameBoard[0] == gameBoard[6] && gameBoard[3] == gameBoard[6])
+         if (gameBoard[0] == gameBoard[3] && gameBoard[0] == gameBoard[6] && gameBoard[3] == gameBoard[6])
         {
                 printf("%c wins\n", gameBoard[0]);
                 return 1;
         }
-        else if (gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7] && gameBoard[4] == gameBoard[7])
+         if (gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7] && gameBoard[4] == gameBoard[7])
         {
                 printf("%c wins\n", gameBoard[1]);
                 return 1;
         }
-        else if (gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8] && gameBoard[5] == gameBoard[8])
+         if (gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8] && gameBoard[5] == gameBoard[8])
         {
                 printf("%c wins\n", gameBoard[2]);
                 return 1;
         }
-        else if (gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8] && gameBoard[4] == gameBoard[8])
+         if (gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8] && gameBoard[4] == gameBoard[8])
         {
                 printf("%c wins\n", gameBoard[0]);
                 return 1;
         }
-        else if (gameBoard[2] == gameBoard[4] && gameBoard[2] == gameBoard[6] && gameBoard[4] == gameBoard[6])
+         if (gameBoard[2] == gameBoard[4] && gameBoard[2] == gameBoard[6] && gameBoard[4] == gameBoard[6])
         {
                 printf("%c wins\n", gameBoard[2]);
                 return 1;
         }
-        else
-        {
-                return 0;
-        }
+        
+        return 0;
 }
